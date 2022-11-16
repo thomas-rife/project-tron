@@ -8,8 +8,17 @@ of the game, such as the game ending when the snakes collide and the edges of th
 up the background and the graphics of the snakes. A few possible extensions could include a score counter, a way to change the
  difficulty (speed) of the snakes, or the color of the snakes. We could also add target squares where if reached add a boost to the
 snakes speed.
-2) Schedule
-3) Pictures of interface
+
+2) Schedule: progress made per week 
+week 1: Have the player class fully finished along with its defintions and attributes. It will include the controls such as x and y coordinates, speed, direction, 
+and overall movement that will be seen when playing the game.
+week 2: Have the snake class finished with all of its attributes and defintions listed. The snake class will address size and speed. 
+week 3: Code the dimensions of the window and the displays for the game. i.e Start of the game and end of the game.
+week 4: Create the new_game defintion which will return the the new players for each new game. Code the controls and how the keys work for the game. 
+Lastly, code how the draw and move function interact with pathing, outcomes, and objects.
+
+3) Pictures of interfaces:
+
 4) Python Classes: The first class we would need would be the snake class. This class would need to have attributes that include the
 size of the snake and the speed. Also, it would need to have the image or color of the snakes. It would need to have metholds to get
 the positon of the snake as well change the position of the snake.  Another class we would need would be the game class. The game
@@ -17,3 +26,6 @@ class would need to have the attrubutes score, to keep track of each players sco
 start game, starting the snakes moving in the pointed direction, as well as a definition to change the snakes angle or direction. Finally,
 we would need a player class, in order to set up two players and their scores. Also, it would take the users inputs and calls the defintions
 in the other classes to change the snakes directions.
+
+5) Because we are importing pygame, we will have access to all the pygame libraries, which is all we will be needing for this game. 
+We will be using terminal with the text editor Visual Studio Code to complete this project.
