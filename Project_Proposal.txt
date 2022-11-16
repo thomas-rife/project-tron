@@ -12,7 +12,7 @@ snakes speed.
 2) Schedule: progress made per week 
 week 1: Have the player class fully finished along with its defintions and attributes. It will include the controls such as x and y coordinates, speed, direction, 
 and overall movement that will be seen when playing the game.
-week 2: Have the snake class finished with all of its attributes and defintions listed. The snake class will address size and speed. 
+week 2: Have the snake class and game class finished with all of its attributes and defintions listed. The snake class will address size and speed. 
 week 3: Code the dimensions of the window and the displays for the game. i.e Start of the game and end of the game.
 week 4: Create the new_game defintion which will return the the new players for each new game. Code the controls and how the keys work for the game. 
 Lastly, code how the draw and move function interact with pathing, outcomes, and objects.
