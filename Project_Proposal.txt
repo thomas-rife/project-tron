@@ -15,5 +15,5 @@ size of the snake and the speed. Also, it would need to have the image or color 
 the positon of the snake as well change the position of the snake.  Another class we would need would be the game class. The game
 class would need to have the attrubutes score, to keep track of each players score. Also, it would need to have defintions such as
 start game, starting the snakes moving in the pointed direction, as well as a definition to change the snakes angle or direction. Finally,
-we would need a player class, in order to set up two players and their scores. Also, it would take the users inputs and calls the defintions
+we would need a player class, in order to set up two players and their scores. Also, it would take the users inputs and calls the definitions
 in the other classes to change the snakes directions.
