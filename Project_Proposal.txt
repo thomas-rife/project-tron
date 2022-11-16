@@ -1,0 +1,7 @@
+Project Proposal
+Group Members: Brian, Thomas, Robert
+
+1) Description:
+2) Schedule
+3) Pictures of interface
+4) Python Classes
