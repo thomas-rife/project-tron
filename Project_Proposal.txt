@@ -17,7 +17,7 @@ week 3: Code the dimensions of the window and the displays for the game. i.e Sta
 week 4: Create the new_game defintion which will return the the new players for each new game. Code the controls and how the keys work for the game. 
 Lastly, code how the draw and move function interact with pathing, outcomes, and objects.
 
-3) Pictures of interfaces:
+3) Pictures of interfaces: https://drive.google.com/file/d/13mqzyvBR8skKndhGcMAPwyUuXSA2jnA2/view?usp=sharing
 
 4) Python Classes: The first class we would need would be the snake class. This class would need to have attributes that include the
 size of the snake and the speed. Also, it would need to have the image or color of the snakes. It would need to have metholds to get
