@@ -42,9 +42,10 @@ class snake:
 
 class game:
 
-    def __init__(self, height, width):
+    def __init__(self, height, width, difficulty):
         self.height = height
         self.width = width   
+        self.difficulty = difficulty
 
     def create_screen(self):
         screen = pygame.display.set_mode([self.height, self.width])
@@ -78,25 +79,51 @@ class game:
         snake2.draw_snake()
         pygame.display.update() 
 
-
-        snake1.extend_snake('right')
-        snake2.extend_snake('up')
-        snake1.extend_snake("right")
-        snake1.extend_snake("right")
-        snake2.extend_snake('left')
-        snake2.extend_snake('down')
-        pygame.display.update()
         'This keeps the screen displaying until the screen window is closed'
+        player1 = player(0, 'letters',snake1, 'right')
+        player2 = player(0, 'arrows', snake2, 'left')
         while True:
+            direction = player1.dir
+            direction2 = player2.dir
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: sys.exit()
+                
+                if event.type == pygame.KEYDOWN:
+                #and (event.key == pygame.K_a or event.key == pygame.K_d or event.key == pygame.K_w or event.key == pygame.K_s or event.key == pygame.K_UP or event.key == pygame.K_DOWN or event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT):
+                    direction = player1.player_input(event)
+                    direction2 = (player2.player_input(event))
 
+            snake1.extend_snake(direction)
+            snake2.extend_snake(direction2)
+            pygame.display.update()
+            pygame.time.wait(self.difficulty)
+            
             
 
 class player:
     'need to get the users inputs and keep track of their scores'
-    pass
+    def __init__(self, score, keys, snake, dir):
+        self.score = score
+        self.keys = keys
+        self.snake = snake
+        self.dir = dir
+        
+
+    def player_input(self, event):
+        if self.keys == 'letters':
+            input_letters = {pygame.K_a : 'left', pygame.K_s : 'down',pygame.K_d : 'right',pygame.K_w : 'up'}
+            if event.key in input_letters:
+                self.dir = input_letters[event.key]
+
+        elif self.keys == 'arrows':
+            input_arrows = {pygame.K_UP: 'up', pygame.K_DOWN: 'down' , pygame.K_LEFT: 'left', pygame.K_RIGHT: 'right'} 
+            if event.key in input_arrows:
+                self.dir = input_arrows[event.key]
+
+        return self.dir
 
 
-x = game(400,400)
+
+
+x = game(400,400, 200)
 x.start_play()
