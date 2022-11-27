@@ -6,7 +6,17 @@ import sys, pygame
 pygame.init()
 
 class snake:
-    pass
+    def __init__(self, screen, color):
+        self.screen = screen
+        self.color = color
+
+    def draw_snake(self):
+        start_x = self.screen.width *2
+        start_y = self.screen.height/2
+        pygame.draw.rect(self.screen, self.color, [start_x, start_y, self.width/20, self.height/20])
+    
+    def extend_snake(self, direction):
+        pass
 
 class game:
 
@@ -38,7 +48,9 @@ class game:
 
         screen = self.create_screen()
         self.draw_grid(screen)
-        pygame.display.update()    
+        pygame.display.update() 
+
+        snake1 = snake(screen, ())   
 
         'This keeps the screen displaying until the screen window is closed'
         while True:
@@ -48,7 +60,9 @@ class game:
             
 
 class player:
+    'need to get the users inputs and keep track of their scores'
     pass
+
 
 x = game(400,400)
 x.start_play()
