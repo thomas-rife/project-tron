@@ -17,6 +17,7 @@ class snake:
         size = pygame.display.get_surface().get_size()
         return size
 
+    'draws a starting snake at opposite positions'
     def draw_snake(self):
         x,y = self.get_size()
         if self.left_player:
@@ -28,6 +29,7 @@ class snake:
         self.current_y = start_y
         pygame.draw.rect(self.screen, self.color, [start_x, start_y, x/20, y/20])
     
+    'adds a block to the existing snake in the given direction - just draws over the existing shape'
     def extend_snake(self, direction):
         'direction is in relation to the screen, not in regard to the snake'
         x,y = self.get_size()
@@ -47,16 +49,18 @@ class game:
         self.width = width   
         self.difficulty = difficulty
 
+    'makes the screen'
     def create_screen(self):
         screen = pygame.display.set_mode([self.height, self.width])
         pygame.display.set_caption('Tron') 
         screen.fill((255,255,255))
         return screen
-        
+    'didnt get this to work, but this is how one would add images to the screen for the start and end'    
     def add_background(self, image):
         background = pygame.image.load(image)
         #back_rect = background.get_rect()
 
+    'draws the grid for the game, 20 by 20'
     def draw_grid(self, screen):
         x_value = 0
         y_value = 0
@@ -67,8 +71,8 @@ class game:
             x_value += self.width/20
             y_value = 0
     
+    'this is what is called to start the game'
     def start_play(self):
-
         screen = self.create_screen()
         self.draw_grid(screen)
         pygame.display.update() 
@@ -89,7 +93,6 @@ class game:
                 if event.type == pygame.QUIT: sys.exit()
                 
                 if event.type == pygame.KEYDOWN:
-                #and (event.key == pygame.K_a or event.key == pygame.K_d or event.key == pygame.K_w or event.key == pygame.K_s or event.key == pygame.K_UP or event.key == pygame.K_DOWN or event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT):
                     direction = player1.player_input(event)
                     direction2 = (player2.player_input(event))
 
@@ -108,7 +111,7 @@ class player:
         self.snake = snake
         self.dir = dir
         
-
+    'returns the direction the snake should move depending on the key pressed'
     def player_input(self, event):
         if self.keys == 'letters':
             input_letters = {pygame.K_a : 'left', pygame.K_s : 'down',pygame.K_d : 'right',pygame.K_w : 'up'}
