@@ -6,4 +6,4 @@ The snake class draws the snake, returns the size, defines die(), and defines ho
 Our game class creates the screen for our game, should add a background that we are still fixing, draws a 20 by 20 grid, how to start the game, and how it loads before the for loop breaks to maintain the screen display.
 The game class also considers the player's direction and control keys.The player class returns the direction the snake moves when a key is pressed.
 We still have to polish our classes and get everything to work together, but as a group, we feel good about our progress and following our schedule. 
-We are working on an intro menu and making the game round based to go along with the edits we will make. We believe we have good communication to finish this project. 
+We are working on an intro menu and making the game round based to go along with the edits we will make. We believe we have good communication to finish this project.
