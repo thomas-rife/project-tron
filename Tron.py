@@ -92,11 +92,10 @@ class game:
             snake2 = snake(screen, (0,0,255), False, self.moves) 
             snake2.draw_snake()
             pygame.display.update() 
-
-        'This keeps the screen displaying until the screen window is closed'
-        player1 = player(0, 'letters',snake1, 'right')
-        player2 = player(0, 'arrows', snake2, 'left')
-        while True:
+            'This keeps the screen displaying until the screen window is closed'
+            player1 = player(0, 'letters',snake1, 'right')
+            player2 = player(0, 'arrows', snake2, 'left')
+            while True:
                 direction = player1.dir
                 direction2 = player2.dir
                 for event in pygame.event.get():
