@@ -1,0 +1,9 @@
+So far, as a group, we have worked on our snake, player, game, collision, and score classes.
+In terms of following our week-by-week schedule, we are on schedule as we have defined both our game and snake class and are making edits to get them to work with our other additions, which include definitions and functions by other classes.
+Our classes for considering collisions and score still need to be finished, and we are changing how our collision class will be defined.
+The collision class is going to be changed to feature arrays that stores a list of all the types of collisions our two-player Tron snake-like game can have. 
+The snake class draws the snake, returns the size, defines die(), and defines how the direction will direct a block to be drawn over the screen with def extend_snake. 
+Our game class creates the screen for our game, should add a background that we are still fixing, draws a 20 by 20 grid, how to start the game, and how it loads before the for loop breaks to maintain the screen display.
+The game class also considers the player's direction and control keys.The player class returns the direction the snake moves when a key is pressed.
+We still have to polish our classes and get everything to work together, but as a group, we feel good about our progress and following our schedule. 
+We are working on an intro menu and making the game round based to go along with the edits we will make. We believe we have good communication to finish this project.
