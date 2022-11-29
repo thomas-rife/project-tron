@@ -2,8 +2,11 @@
 The tron game.
 Brian, Thomas, Robert
 """
-import sys, pygame
+import pygame, sys
 pygame.init()
+
+#color
+BLUE = (0, 0, 50)
 
 class snake:
     def __init__(self, screen, color, left_player):
@@ -41,6 +44,10 @@ class snake:
             pygame.draw.rect(self.screen, self.color, [self.current_x, self.current_y + directions[direction], x/20, y/20])
             self.current_y += directions[direction]
 
+    def die(self):
+        snake.headx = random.randrange(0, width)
+        snake.heady = random.randrange(0, hieght)
+        "should be how the snake respawns, but this part still needs to be rewokred"
 
 class game:
 
@@ -100,8 +107,55 @@ class game:
             snake2.extend_snake(direction2)
             pygame.display.update()
             pygame.time.wait(self.difficulty)
-            
-            
+
+if collision.between_snakes(self, snake1, snake2):
+    snake.extend_snake()
+if collision.between_snake_and_walls(snake):
+    #lose
+    snake.die()
+    #reset score (score=0)
+
+
+
+    def display_label(self, message):
+        """ this is where we define the display label to put the introductory message before game starts
+        """
+        
+    def starter_message(self):
+        self.display_label('', 3) #insert title for game here 
+        self.display_label('Your game starts in \n 3', 1)
+        self.display_label('Your game starts in \n 2', 1)
+        self.display_label('Your game starts in \n 1', 1)
+
+class collision:
+    def between_snakes(self, snake1, snake2):
+        if snake1.x < snake2.x + snake1.w and snake1.x + snake1.w > snake2.x and snake1.y < snake1.y + snake2.h and snake1.y + snake1.h > snake2.y:
+            return True
+        else:
+            return False  
+    def between_snake_and_walls(self, snake):
+        if snake.headx < 0 or snake.headx > width or snake.heady < 0 or snake.heady > height:
+            return True
+        else:
+            return False
+    def between_head_and_body(self, snake):
+        for body in snake.extend
+        # this should for when user collides with the body of its own snake
+        # stil needs to be finished
+
+class score:
+    def __init__(self):
+        self.points = 0
+        self.font = pygame.font.SysFont('monospace', 20, bold=False)
+
+    def increase(self):
+        self.points += 1
+
+    def reset(self):
+        self.points = 0 
+    
+    def show(self, surface):
+        label = self.font.render('Score: ' + str(self.points), 1 , BLUE)
 
 class player:
     'need to get the users inputs and keep track of their scores'
@@ -110,7 +164,7 @@ class player:
         self.keys = keys
         self.snake = snake
         self.dir = dir
-        
+        score = 0 
     'returns the direction the snake should move depending on the key pressed'
     def player_input(self, event):
         if self.keys == 'letters':
@@ -124,7 +178,6 @@ class player:
                 self.dir = input_arrows[event.key]
 
         return self.dir
-
 
 
 
