@@ -3,7 +3,6 @@ The tron game.
 Brian, Thomas, Robert
 """
 import sys, pygame
-import menu
 pygame.init()
 
 class snake:
@@ -139,7 +138,6 @@ class player:
                     self.dir = direct
 
         return self.dir
-
 
 
 
