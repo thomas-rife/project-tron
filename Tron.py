@@ -3,6 +3,7 @@ The tron game.
 Brian, Thomas, Robert
 """
 import sys, pygame
+import menu
 pygame.init()
 
 class snake:
