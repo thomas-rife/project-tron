@@ -17,6 +17,7 @@ start = False
 #FONTS
 font = pygame.font.SysFont("arialblack",50)
 button_font = pygame.font.SysFont("arialblack",25)
+speed_font = pygame.font.SysFont("arialblack",18)
 #COLORS
 txt_color = (255,191,0)
 
@@ -31,13 +32,13 @@ logo = Button.Button(115,210,button_frame,1)
 
 #making first start button
 start_button = Button.Button(45,315,start_button_frame,1)
-speed_button = Button.Button(255,315,start_button_frame,1)
-
+slow_button = Button.Button(200,322,start_button_frame,0.7)
+fast_button = Button.Button(290,322,start_button_frame,0.7)
 
 def draw_text(text,font,txt_color,x,y):
     img = font.render(text,True,txt_color)
     screen.blit(img,(x,y))
-
+speed = 0
 run = True
 while run:
     screen.blit(bg,(0,0))
@@ -48,11 +49,16 @@ while run:
     if start_button.draw(screen):
         x = Tron.game(400,400, 200)
         x.start_play()
-    if speed_button.draw(screen):
-        print("Speed")
+    if fast_button.draw(screen):
+        x = Tron.game(400,400, 100)
+        x.start_play()
+    if slow_button.draw(screen):
+        x = Tron.game(400,400, 300)
+        x.start_play()
 
     draw_text("START",button_font,txt_color,55,325)
-    draw_text("SPEED",button_font,txt_color,265,325)
+    draw_text("SLOW",speed_font,txt_color,213,331)
+    draw_text("FAST",speed_font,txt_color,305,331)
 
     for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONUP:
