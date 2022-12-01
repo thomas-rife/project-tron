@@ -2,8 +2,10 @@
 The tron game.
 Brian, Thomas, Robert
 """
-import sys, pygame
+import sys
+import pygame
 import menu
+import time
 pygame.init()
 
 class snake:
@@ -114,6 +116,12 @@ class game:
                 else:    
                     pygame.display.update()
                     pygame.time.wait(self.difficulty)
+            while True:
+                for x in range (3):
+                    time.sleep(.8)
+                    print(x)
+            
+
             
 
 class player:
@@ -137,9 +145,6 @@ class player:
                 self.dir = input_arrows[event.key]
 
         return self.dir
-
-
-
 
 x = game(400,400, 200)
 x.start_play()
