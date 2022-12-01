@@ -87,7 +87,7 @@ class game:
             self.draw_grid(screen)
             snake1 = snake(screen, (255, 16, 240), True, self.moves)
             snake1.draw_snake() 
-            snake2 = snake(screen, (255,191,0), False, self.moves) 
+            snake2 = snake(screen, (255,234,0), False, self.moves) 
             snake2.draw_snake()
             pygame.display.update() 
             'This keeps the screen displaying until the screen window is closed'
