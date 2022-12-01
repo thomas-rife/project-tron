@@ -1,6 +1,6 @@
 import pygame
 import Button
-
+import Tron
 pygame.init()
 
 SCREEN_WIDTH = 400
@@ -20,12 +20,10 @@ button_font = pygame.font.SysFont("arialblack",25)
 #COLORS
 txt_color = (255,191,0)
 
-######## BUTTON CLASS ############
 
 #load images
 button_frame = pygame.image.load("Documents/CMSI1010/project-tron/logo.jpg")
 start_button_frame = pygame.image.load("Documents/CMSI1010/project-tron/button-image.jpg")
-
 
 
 #making main tron logo
@@ -33,9 +31,8 @@ logo = Button.Button(115,210,button_frame,1)
 
 #making first start button
 start_button = Button.Button(45,315,start_button_frame,1)
-other_button = Button.Button(255,315,start_button_frame,1)
+speed_button = Button.Button(255,315,start_button_frame,1)
 
-#######################################################
 
 def draw_text(text,font,txt_color,x,y):
     img = font.render(text,True,txt_color)
@@ -48,12 +45,11 @@ while run:
 
     draw_text("TRON",font,txt_color,124,212)
 
-
     if start_button.draw(screen):
-        print("start")
-    if other_button.draw(screen):
+        x = Tron.game(400,400, 200)
+        Tron.x.start_play()
+    if speed_button.draw(screen):
         print("Speed")
-
 
     draw_text("START",button_font,txt_color,55,325)
     draw_text("SPEED",button_font,txt_color,265,325)
@@ -71,4 +67,4 @@ pygame.quit()
 
 
 
-# WHEN WE LOAD IN THIS MODULE TO PYGAME, WE MUST ALSO LOAD IN THE IMAGES; IMG NAME = pygame.img.load("PATHWAY TO IMAGE HERE")
+# WHEN WE LOAD IN THIS MODULE TO TRON, WE MUST ALSO LOAD IN THE IMAGES; IMG NAME = pygame.img.load("PATHWAY TO IMAGE HERE")
