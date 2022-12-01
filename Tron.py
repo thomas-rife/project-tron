@@ -18,6 +18,7 @@ class snake:
         size = pygame.display.get_surface().get_size()
         return size
 
+    #draws the start square of the snake starting at the correct position depending on if its the right or left snake
     def draw_snake(self):
         x,y = self.get_size()
         if self.left_player:
@@ -30,6 +31,7 @@ class snake:
         pygame.draw.rect(self.screen, self.color, [start_x, start_y, x/20, y/20])
         self.moves.append((self.current_x, self.current_y))
     
+    #draws a square in the given direction and checks to see if the snake's move is illegal to which it will return true.
     def extend_snake(self, direction):
         'direction is in relation to the screen, not in regard to the snake'
         x,y = self.get_size()
@@ -53,16 +55,14 @@ class game:
         self.difficulty = difficulty
         self.moves = []
 
+    #creates the screen for the snakes
     def create_screen(self):
         screen = pygame.display.set_mode([self.height, self.width])
         pygame.display.set_caption('Tron') 
         screen.fill((255,255,255))
         return screen
-        
-    def add_background(self, image):
-        background = pygame.image.load(image)
-        #back_rect = background.get_rect()
-
+    
+    #draws the starting grid with 20 by 20 squares    
     def draw_grid(self, screen):
         x_value = 0
         y_value = 0
@@ -78,7 +78,7 @@ class game:
         
         return (snake1, snake2)
         '''
-    
+    #this function initilizes the snakes and the players and starts the game
     def start_play(self):
         for x in range(3):
             screen = self.create_screen()
@@ -96,6 +96,7 @@ class game:
             
             "add a countdown function so its not right away"
 
+            #this is the loop that allows for the snake to look like its moving
             while True:
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT: sys.exit()
@@ -120,7 +121,7 @@ class player:
         self.snake = snake
         self.dir = dir
         
-
+    #this class takes in the event and checks to see if the move is allowed (not in the opposite direction) and returns the direction to move
     def player_input(self, event):
         anti_direct = {'left':'right', 'right':'left', 'up':'down', 'down':'up'}
         if self.keys == 'letters':
