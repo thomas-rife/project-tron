@@ -11,8 +11,10 @@ SCREEN_HEIGHT = 400
 
 screen  = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT) )
 
+#sets caption
 pygame.display.set_caption("Main Menu")
 
+#loads background image
 bg = pygame.image.load("background-image.jpg")
 
 start = False
@@ -21,13 +23,13 @@ start = False
 font = pygame.font.SysFont("arialblack",50)
 button_font = pygame.font.SysFont("arialblack",25)
 speed_font = pygame.font.SysFont("arialblack",18)
+
 #COLORS
 txt_color = (255,191,0)
 
 #load images
 button_frame = pygame.image.load("logo.jpg")
 start_button_frame = pygame.image.load("button-image.jpg")
-
 
 #making main tron logo
 logo = Button.Button(115,210,button_frame,1)
@@ -50,10 +52,13 @@ speed = 0
 run = True
 while run:
     screen.blit(bg,(0,0))
+
+    #draws background
     logo.draw(screen)
 
     draw_text("TRON",font,txt_color,124,212)
 
+    #main if statement that plays game if player clicks on button
     if start_button.draw(screen):
         x = Tron.game(400,400, 200)
         x.start_play()
@@ -69,6 +74,7 @@ while run:
     draw_text("SLOW",speed_font,txt_color,213,331)
     draw_text("FAST",speed_font,txt_color,305,331)
 
+    #getting mouse position and quitting if inputed
     for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONUP:
             pos = pygame.mouse.get_pos()
