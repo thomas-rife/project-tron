@@ -3,7 +3,6 @@ The tron game.
 Brian, Thomas, Robert
 """
 import sys, pygame
-import menu
 pygame.init()
 
 class snake:
@@ -86,9 +85,9 @@ class game:
             self.moves = []
             screen.fill((255,255,255))
             self.draw_grid(screen)
-            snake1 = snake(screen, (255, 0, 0), True, self.moves)
+            snake1 = snake(screen, (255, 16, 240), True, self.moves)
             snake1.draw_snake() 
-            snake2 = snake(screen, (0,0,255), False, self.moves) 
+            snake2 = snake(screen, (255,234,0), False, self.moves) 
             snake2.draw_snake()
             pygame.display.update() 
             'This keeps the screen displaying until the screen window is closed'
@@ -139,9 +138,3 @@ class player:
                     self.dir = direct
 
         return self.dir
-
-
-
-
-x = game(400,400, 200)
-x.start_play()
