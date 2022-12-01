@@ -47,7 +47,7 @@ while run:
 
     if start_button.draw(screen):
         x = Tron.game(400,400, 200)
-        Tron.x.start_play()
+        x.start_play()
     if speed_button.draw(screen):
         print("Speed")
 
