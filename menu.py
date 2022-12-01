@@ -10,7 +10,7 @@ screen  = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT) )
 
 pygame.display.set_caption("Main Menu")
 
-bg = pygame.image.load("Documents/CMSI1010/project-tron/background-image.jpg")
+bg = pygame.image.load("background-image.jpg")
 
 start = False
 
@@ -22,8 +22,8 @@ txt_color = (255,191,0)
 
 
 #load images
-button_frame = pygame.image.load("Documents/CMSI1010/project-tron/logo.jpg")
-start_button_frame = pygame.image.load("Documents/CMSI1010/project-tron/button-image.jpg")
+button_frame = pygame.image.load("logo.jpg")
+start_button_frame = pygame.image.load("button-image.jpg")
 
 
 #making main tron logo
