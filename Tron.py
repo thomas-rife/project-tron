@@ -138,8 +138,3 @@ class player:
                     self.dir = direct
 
         return self.dir
-
-
-
-x = game(400,400, 200)
-x.start_play()
