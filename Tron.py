@@ -83,10 +83,10 @@ class game:
         snake2.draw_snake(self.moves)
         pygame.display.update()
 
-    def winner(self, screen, winner):
-        font = pygame.font.SysFont("arialblack",50)
-        img = font.render(winner + ' WINS!',True, (0,0,0))
-        screen.blit(img,(75, 125))
+    def winner(self, screen, winner, color):
+        font = pygame.font.SysFont("arialblack",75)
+        img = font.render(winner + ' WINS!',True, color)
+        screen.blit(img,(15, 125))
 
     '''
     def new_screen(self, screen):
@@ -131,13 +131,13 @@ class game:
                     pygame.display.update()
                     pygame.time.wait(self.difficulty)
                 player2.update(screen, (255,234,0), (20, 20))
-                player1.update(screen, (255, 16, 240), (380, 20))
+                player1.update(screen, (255, 16, 240), (350, 20))
             if player1.score == 3:
-                self.winner(screen, 'P1')
+                self.winner(screen, 'P2', (255, 16, 240))
             elif player2.score == 3:
-                self.winner(screen, 'P2')
+                self.winner(screen, 'P1', (255,234,0))
             pygame.display.update()
-            pygame.time.wait(2000)
+            pygame.time.wait(2500)
                 
             
 
@@ -172,7 +172,11 @@ class player:
         self.score += 1
     
     def update(self, screen, txt_color, position):
+        #draws the outline in black
+        font = pygame.font.SysFont("arialblack",55)
+        img = font.render(str(self.score),True,(0,0,0))
+        screen.blit(img,position)
+        #draws the color of the snake
         font = pygame.font.SysFont("arialblack",50)
-        
         img = font.render(str(self.score),True,txt_color)
         screen.blit(img,position)
