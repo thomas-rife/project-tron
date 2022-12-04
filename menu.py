@@ -1,10 +1,10 @@
 import pygame
 import Button
 import Tron
-from pygame import mixer
+#from pygame import mixer
 
 pygame.init()
-mixer.init()
+#mixer.init()
 
 SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 400
@@ -40,8 +40,8 @@ slow_button = Button.Button(200,322,start_button_frame,0.7)
 fast_button = Button.Button(290,322,start_button_frame,0.7)
 
 #load and play music
-mixer.music.load('background-music.wav')
-mixer.music.play()
+#mixer.music.load('background-music.wav')
+#mixer.music.play()
 
 #draw text function
 def draw_text(text,font,txt_color,x,y):
@@ -69,7 +69,7 @@ while run:
         x = Tron.game(400,400, 300)
         x.start_play()
 
-    #draw text on screen
+    #draw text on screenS
     draw_text("START",button_font,txt_color,55,325)
     draw_text("SLOW",speed_font,txt_color,213,331)
     draw_text("FAST",speed_font,txt_color,305,331)
