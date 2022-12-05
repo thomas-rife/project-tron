@@ -2,10 +2,7 @@
 The tron game.
 Brian, Thomas, Robert
 """
-import sys
-import pygame
-import menu
-import time
+import sys, pygame
 pygame.init()
 
 class snake:
@@ -34,12 +31,10 @@ class snake:
         self.moves.append((self.current_x, self.current_y))
     
     def extend_snake(self, direction):
-        print('this function is being called')
         'direction is in relation to the screen, not in regard to the snake'
         x,y = self.get_size()
         directions = {'up': -(y/20), 'down': (y/20), 'left': -(x/20), 'right': x/20}
         if direction == 'left' or direction == 'right':
-            print("not drawing over the fill")
             pygame.draw.rect(self.screen, self.color, [self.current_x + directions[direction], self.current_y, x/20, y/20])
             self.current_x += directions[direction]
         else:
@@ -77,12 +72,17 @@ class game:
                 y_value += self.height/20
             x_value += self.width/20
             y_value = 0
-    '''
-    def new_screen(self, screen):
+    
+
         
         
         return (snake1, snake2)
-        '''
+
+    def countdown(self):
+        while True:
+            for x in range (3):
+                time.sleep(.8)
+                print(x)    
     
     def start_play(self):
         for x in range(3):
@@ -98,30 +98,23 @@ class game:
             'This keeps the screen displaying until the screen window is closed'
             player1 = player(0, 'letters',snake1, 'right')
             player2 = player(0, 'arrows', snake2, 'left')
+            
+            "add a countdown function so its not right away"
+
             while True:
-                direction = player1.dir
-                direction2 = player2.dir
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT: sys.exit()
                 
                     if event.type == pygame.KEYDOWN:
-                #and (event.key == pygame.K_a or event.key == pygame.K_d or event.key == pygame.K_w or event.key == pygame.K_s or event.key == pygame.K_UP or event.key == pygame.K_DOWN or event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT):
-                        direction = player1.player_input(event)
-                        direction2 = (player2.player_input(event))
-
-                if snake1.extend_snake(direction):
+                        player1.player_input(event)
+                        player2.player_input(event)
+                if snake1.extend_snake(player1.dir):
                     break
-                elif snake2.extend_snake(direction2):
+                elif snake2.extend_snake(player2.dir):
                     break
                 else:    
                     pygame.display.update()
                     pygame.time.wait(self.difficulty)
-            while True:
-                for x in range (3):
-                    time.sleep(.8)
-                    print(x)
-            
-
             
 
 class player:
@@ -134,17 +127,23 @@ class player:
         
 
     def player_input(self, event):
+        anti_direct = {'left':'right', 'right':'left', 'up':'down', 'down':'up'}
         if self.keys == 'letters':
             input_letters = {pygame.K_a : 'left', pygame.K_s : 'down',pygame.K_d : 'right',pygame.K_w : 'up'}
             if event.key in input_letters:
-                self.dir = input_letters[event.key]
+                  direct = input_letters[event.key]
+                  if direct != anti_direct[self.dir]:
+                    self.dir = direct
 
         elif self.keys == 'arrows':
             input_arrows = {pygame.K_UP: 'up', pygame.K_DOWN: 'down' , pygame.K_LEFT: 'left', pygame.K_RIGHT: 'right'} 
             if event.key in input_arrows:
-                self.dir = input_arrows[event.key]
+                direct = input_arrows[event.key]
+                if direct != anti_direct[self.dir]:
+                    self.dir = direct
 
         return self.dir
+game1 = game(500,500,1)
+while True:
+    game1.start_play()
 
-x = game(400,400, 200)
-x.start_play()
