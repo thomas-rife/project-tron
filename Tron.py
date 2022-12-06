@@ -4,7 +4,7 @@ Brian, Thomas, Robert
 """
 import sys, pygame
 pygame.init()
-
+import time
 class snake:
     def __init__(self, screen, color, left_player):
         self.screen = screen
@@ -81,6 +81,7 @@ class game:
         player2.dir = 'left'
         snake1.draw_snake(self.moves) 
         snake2.draw_snake(self.moves)
+        # self.countdown(screen)
         pygame.display.update()
 
     def winner(self, screen, winner, color):
@@ -88,12 +89,23 @@ class game:
         img = font.render(winner + ' WINS!',True, color)
         screen.blit(img,(15, 125))
 
-    '''
-    def new_screen(self, screen):
+    #this function starts a countdown from 3 at the start of each round
+    def countdown(self, screen):
+       for x in range(3, 0, -1):
+        screen.fill((255,255,255))
+        self.draw_grid(screen)
+        font = pygame.font.SysFont("arialblack",75)
+        img = font.render(str(int(x)), True, 'Blue')
+        screen.blit(img,(175, 125))
+        pygame.time.delay(1000)
+        pygame.display.update()
+       screen.fill((255,255,255))
+       self.draw_grid(screen)
+        # print(x)
+    #     text_color = (255,171,10)
         
-        
-        return (snake1, snake2)
-        '''
+                
+    
     #this function initilizes the snakes and the players and starts the game
     def start_play(self):
         
@@ -104,6 +116,8 @@ class game:
             player1 = player('letters',snake1, 'right')
             player2 = player('arrows', snake2, 'left')
             
+            self.countdown(screen)
+            pygame.time.delay(3000)
             self.new_round(snake1, snake2, screen, player1, player2)
             
 
@@ -118,15 +132,16 @@ class game:
                     if event.type == pygame.KEYDOWN:
                         player1.player_input(event)
                         player2.player_input(event)
-
                 pygame.display.update()
                 if snake1.extend_snake(player1.dir, self.moves):
                     player2.add_point()
                     self.new_round(snake1, snake2, screen, player1, player2)
+                    pygame.time.delay(500)
 
                 elif snake2.extend_snake(player2.dir, self.moves):
                     player1.add_point()  
                     self.new_round(snake1, snake2, screen, player1, player2)
+                    pygame.time.delay(500)
                 else:    
                     pygame.display.update()
                     pygame.time.wait(self.difficulty)
