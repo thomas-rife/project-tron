@@ -95,7 +95,7 @@ class game:
         screen.fill((255,255,255))
         self.draw_grid(screen)
         font = pygame.font.SysFont("arialblack",75)
-        img = font.render(str(int(x)), True, 'Blue')
+        img = font.render(str(int(x)), True, 'Magenta')
         screen.blit(img,(175, 125))
         pygame.time.delay(1000)
         pygame.display.update()
@@ -134,23 +134,23 @@ class game:
                         player2.player_input(event)
                 pygame.display.update()
                 if snake1.extend_snake(player1.dir, self.moves):
-                    player2.add_point()
+                    player1.add_point()
                     self.new_round(snake1, snake2, screen, player1, player2)
                     pygame.time.delay(500)
 
                 elif snake2.extend_snake(player2.dir, self.moves):
-                    player1.add_point()  
+                    player2.add_point()  
                     self.new_round(snake1, snake2, screen, player1, player2)
                     pygame.time.delay(500)
                 else:    
                     pygame.display.update()
                     pygame.time.wait(self.difficulty)
-                player2.update(screen, (255,234,0), (20, 20))
-                player1.update(screen, (255, 16, 240), (350, 20))
+                player2.update(screen, (255,16,240), (20, 20))
+                player1.update(screen, (255, 234, 0), (350, 20))
             if player1.score == 3:
-                self.winner(screen, 'P2', (255, 16, 240))
+                self.winner(screen, 'P2', (255, 234, 0))
             elif player2.score == 3:
-                self.winner(screen, 'P1', (255,234,0))
+                self.winner(screen, 'P1', (255,16,240))
             pygame.display.update()
             pygame.time.wait(2500)
                 
