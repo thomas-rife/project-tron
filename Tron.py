@@ -95,7 +95,7 @@ class game:
         screen.fill((255,255,255))
         self.draw_grid(screen)
         font = pygame.font.SysFont("arialblack",75)
-        img = font.render(str(int(x)), True, 'Magenta')
+        img = font.render(str(int(x)), True, 'Purple')
         screen.blit(img,(175, 125))
         pygame.time.delay(1000)
         pygame.display.update()
@@ -104,7 +104,7 @@ class game:
         # print(x)
     #     text_color = (255,171,10)
         
-                
+    
     
     #this function initilizes the snakes and the players and starts the game
     def start_play(self):
