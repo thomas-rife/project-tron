@@ -117,7 +117,7 @@ class game:
             player2 = player('arrows', snake2, 'left')
             
             self.countdown(screen)
-            pygame.time.delay(3000)
+            pygame.time.delay(1000)
             self.new_round(snake1, snake2, screen, player1, player2)
             
 
