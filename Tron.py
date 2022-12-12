@@ -61,7 +61,7 @@ class game:
         screen.fill((255,255,255))
         return screen
     
-    #draws the starting grid with 20 by 20 squares    
+    #draws the starting grid with 20 by 20 squares - depending on the call to the function    
     def draw_grid(self, screen):
         x_value = 0
         y_value = 0
@@ -72,6 +72,7 @@ class game:
             x_value += self.width/20
             y_value = 0
 
+    #this starts a new round of play, it fills the screen, draws new snakes and resets the directions
     def new_round(self, snake1, snake2, screen, player1, player2):
         self.moves = []
                     
@@ -84,6 +85,7 @@ class game:
         # self.countdown(screen)
         pygame.display.update()
 
+    #this function draws the winner onto the screen using the winners sides color
     def winner(self, screen, winner, color):
         font = pygame.font.SysFont("arialblack",75)
         img = font.render(winner + ' WINS!',True, color)
@@ -123,7 +125,7 @@ class game:
 
             "add a countdown function so its not right away"
 
-            'This keeps the screen displaying until the screen window is closed'
+            #This keeps the screen displaying until the screen window is closed
             #this is the loop that allows for the snake to look like its moving
             while player1.score < 3 and player2.score < 3:
                 for event in pygame.event.get():
@@ -164,7 +166,7 @@ class player:
         self.snake = snake
         self.dir = dir
         
-    #this class takes in the event and checks to see if the move is allowed (not in the opposite direction) and returns the direction to move
+    #this class takes in the event and checks to see if the move is allowed (not in the opposite direction) and returns the direction to be passed to the extend snake function
     def player_input(self, event):
         anti_direct = {'left':'right', 'right':'left', 'up':'down', 'down':'up'}
         if self.keys == 'letters':
@@ -185,7 +187,7 @@ class player:
 
     def add_point(self):
         self.score += 1
-    
+    #this function is used to draw the score onto the screens, with a outline so it is still visible if the snakes moves "through" the score"
     def update(self, screen, txt_color, position):
         #draws the outline in black
         font = pygame.font.SysFont("arialblack",55)
