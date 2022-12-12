@@ -52,4 +52,8 @@ automatically return to the main menu to start again. It's faster and makes more
 we needed to add was a class to make buttons on the main menu, but other than that the classes and the things they do stayed the same.
 
 5) The libraries we used did include pygame, as we stated in the original proposal, but we did end up needing to import the time and mixer module, for the timing and
-playing music. We used Visual Studio Code as well.
+playing music. We used Visual Studio Code as well. Also, we used the pygames documentation to learn how the functions and basic game designs are set up.
+
+List of what everyone did:
+
+Desription of difficulties we had and how we overcame them:
