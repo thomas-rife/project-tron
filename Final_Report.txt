@@ -55,5 +55,12 @@ we needed to add was a class to make buttons on the main menu, but other than th
 playing music. We used Visual Studio Code as well. Also, we used the pygames documentation to learn how the functions and basic game designs are set up.
 
 List of what everyone did:
+Thomas -
+Robert - 
+Brian - Worked mostly on the Tron file. Coded the snake class and most of the game and player class. I helped with making the 3 rounds function correctly,
+as well as with the score. 
 
-Desription of difficulties we had and how we overcame them:
+Description of difficulties we had and how we overcame them:
+Multiple members of the group has issues with installing pygames and getting it to run. This greatly hindered our group as they were not able to work on the project until it got fixed. The issue
+took a long time to fix as well. It took asking teachers, TA's and lots of time spent installing and re-installing in order to make it work. Other than that we had normal issue such as our code
+not having the expected results and having bugs. We overcame this by trying different things and using resources when we became stuck.
