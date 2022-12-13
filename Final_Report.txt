@@ -55,7 +55,8 @@ we needed to add was a class to make buttons on the main menu, but other than th
 playing music. We used Visual Studio Code as well. Also, we used the pygames documentation to learn how the functions and basic game designs are set up.
 
 List of what everyone did:
-Thomas -
+Thomas - I worked mainly on the menu, UI design of the screen and and the buttons. I did the menu and the button files and added the menu music as well. I also helped with the
+colors and the while loop function that makes the game run.
 Robert - 
 Brian - Worked mostly on the Tron file. Coded the snake class and most of the game and player class. I helped with making the 3 rounds function correctly,
 as well as with the score. 
