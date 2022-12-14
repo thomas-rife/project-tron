@@ -55,8 +55,9 @@ we needed to add was a class to make buttons on the main menu, but other than th
 playing music. We used Visual Studio Code as well. Also, we used the pygames documentation to learn how the functions and basic game designs are set up.
 
 List of what everyone did:
-Thomas - I worked mainly on the menu, UI design of the screen and and the buttons. I did the menu and the button files and added the menu music as well. I also helped with the
-colors and the while loop function that makes the game run.
+Thomas - I worked mainly on the menu, UI design of the screen and the buttons. I did the menu and the button files and added the menu music as well. I also helped with the
+colors and the while loop function that makes the game run. I did the original UI designs and drawings from the project proposal and also was in charge of making this aspect of the menu
+as consistent with the theme I chose, which was synthwave. 
 
 Robert - Also worked mainly in the tron file. I worked on the orginal functions for collisions, countdown, and score. This changed when we thought of an easier way to 
 consider the collisions with arrays. I did a lot of testing for the game to make sure the controls worked and that the game would run as smoothly as possible. I debugged and did minor fixes to some of the functions.
@@ -86,4 +87,4 @@ how important leaving comments on what the code does makes life easier for debug
 
 
 Acknowledgments for any code or libraries used in your project: 
-The main libraries that we used were from pygame just as mentioned in the proposal; however, we also added the timer python library to help make sure the countdown function worked. We also included the mixer module.
+The main libraries that we used were from pygame just as mentioned in the proposal; however, we also added the timer python library to help make sure the countdown function worked. We also included the mixer module for menu music.
