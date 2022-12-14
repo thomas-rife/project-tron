@@ -91,7 +91,9 @@ class game:
         img = font.render(winner + ' WINS!',True, color)
         screen.blit(img,(15, 125))
 
-    #this function starts a countdown from 3 at the start of each round
+    #this function starts a countdown from 3 at the start of the game
+    #displays this countdown before disappearing on the screen
+    #draws the countdown on the screen with the color chosen, but the color can be changed in the code to whatever the user wants/prefers
     def countdown(self, screen):
        for x in range(3, 0, -1):
         screen.fill((255,255,255))
@@ -103,8 +105,6 @@ class game:
         pygame.display.update()
        screen.fill((255,255,255))
        self.draw_grid(screen)
-        # print(x)
-    #     text_color = (255,171,10)
         
     
     
@@ -123,7 +123,7 @@ class game:
             self.new_round(snake1, snake2, screen, player1, player2)
             
 
-            "add a countdown function so its not right away"
+            
 
             #This keeps the screen displaying until the screen window is closed
             #this is the loop that allows for the snake to look like its moving
@@ -139,7 +139,7 @@ class game:
                     player1.add_point()
                     self.new_round(snake1, snake2, screen, player1, player2)
                     pygame.time.delay(500)
-
+            #each if and elif statement above and below has a time.delay function that is what causes the pause in between rounds to allow the user to get set up for the next game
                 elif snake2.extend_snake(player2.dir, self.moves):
                     player2.add_point()  
                     self.new_round(snake1, snake2, screen, player1, player2)
@@ -149,6 +149,7 @@ class game:
                     pygame.time.wait(self.difficulty)
                 player2.update(screen, (255,16,240), (20, 20))
                 player1.update(screen, (255, 234, 0), (350, 20))
+            # the if and elif statement below call for the winner screen depending on which player got to 3 points first
             if player1.score == 3:
                 self.winner(screen, 'P2', (255, 234, 0))
             elif player2.score == 3:
@@ -167,6 +168,7 @@ class player:
         self.dir = dir
         
     #this class takes in the event and checks to see if the move is allowed (not in the opposite direction) and returns the direction to be passed to the extend snake function
+    #shows what keys are used for the directions up, down, right, left for both player 1 and 2
     def player_input(self, event):
         anti_direct = {'left':'right', 'right':'left', 'up':'down', 'down':'up'}
         if self.keys == 'letters':
@@ -184,7 +186,7 @@ class player:
                     self.dir = direct
 
         return self.dir
-
+    #this function adds points to the score seen on both the top left and right of the screen when starting the game
     def add_point(self):
         self.score += 1
     #this function is used to draw the score onto the screens, with a outline so it is still visible if the snakes moves "through" the score"

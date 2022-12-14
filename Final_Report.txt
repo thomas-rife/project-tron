@@ -57,11 +57,32 @@ playing music. We used Visual Studio Code as well. Also, we used the pygames doc
 List of what everyone did:
 Thomas - I worked mainly on the menu, UI design of the screen and and the buttons. I did the menu and the button files and added the menu music as well. I also helped with the
 colors and the while loop function that makes the game run.
-Robert - 
+
+Robert - Also worked mainly in the tron file. I worked on the orginal functions for collisions, countdown, and score. This changed when we thought of an easier way to 
+consider the collisions with arrays. I did a lot of testing for the game to make sure the controls worked and that the game would run as smoothly as possible. I debugged and did minor fixes to some of the functions.
+I wrote our scheudle, how the group would work to complete the game, and expected uses for our libraries to make sure to complete the game for the proposal. I also helped by talking problems out with our group on how certain loops, collisons, and more would work. I wrote the our milestone
+and did most of the final presentation for our group's presentation of the game tron. 
+
 Brian - Worked mostly on the Tron file. Coded the snake class and most of the game and player class. I helped with making the 3 rounds function correctly,
 as well as with the score. 
 
 Description of difficulties we had and how we overcame them:
 Multiple members of the group has issues with installing pygames and getting it to run. This greatly hindered our group as they were not able to work on the project until it got fixed. The issue
-took a long time to fix as well. It took asking teachers, TA's and lots of time spent installing and re-installing in order to make it work. Other than that we had normal issue such as our code
-not having the expected results and having bugs. We overcame this by trying different things and using resources when we became stuck.
+took a long time to fix as well. It took asking teachers, TA's and lots of time spent installing and re-installing in order to make it work. Some of the installations came in the form of uninstalling pip and reinstalling it to see if it would fix our pygame issue.
+For some the reinstalation of pip did not change the issue so the focus shifted to trying the methods posted by Dr.Sepas on ed discussion that told us that pygame may not be working because of our version of python that we installed, so we had to download an older version.
+When that did not work either, some of us had to check our initialization of the game in our code to test if the pygame would now work after reinstalling everything to fix the issues. That was done with the TAs help as well as google searching how others resolved the issue. It happened for both mac and windows.
+Other than that we had normal issues such as our code not having the expected results and having bugs. We overcame this by trying different things and using resources when we became stuck. We also were able to resolve these issues by talking to each other and using each of our understanding of the concepts learned in the class to understand how to go about our code.
+We also had issues with some functions and how they worked with the game. This was talked about in our presentation
+
+
+What we learned from python and overall from working as a team:
+Overall, as a team, we learnad how to each have different branches use them so we could all be able to work on the project at the same time.
+This project taught us a lot of on how to work as a team. That includes designating different tasks to each person, contributing equally,
+solving and knowing the differences in our coding styles so we can effectively have each person do a different part without hurting the code of others.
+Everyone agreed on the design of the project and it taught us how to utilize the in-class coding sessions to the fullest. we learned that python might not be the best for coding a game.
+That also includes libraries as there aare potentially better ones than pygame, as it frustrating to work around. The best thing that we learned from this that will work for any language is
+how important leaving comments on what the code does makes life easier for debugging or understanding what each person was working on and the direction of our code.
+
+
+Acknowledgments for any code or libraries used in your project: 
+The main libraries that we used were from pygame just as mentioned in the proposal; however, we also added the timer python library to help make sure the countdown function worked. We also included the mixer module.
